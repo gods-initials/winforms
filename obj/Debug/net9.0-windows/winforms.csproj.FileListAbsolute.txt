@@ -17,3 +17,4 @@ c:\Users\galah\Desktop\winforms\bin\Debug\net9.0-windows\Microsoft.Extensions.Lo
 c:\Users\galah\Desktop\winforms\bin\Debug\net9.0-windows\MySqlConnector.dll
 c:\Users\galah\Desktop\winforms\obj\Debug\net9.0-windows\winforms.csproj.AssemblyReference.cache
 c:\Users\galah\Desktop\winforms\obj\Debug\net9.0-windows\winforms.csproj.Up2Date
+c:\Users\galah\Desktop\winforms\obj\Debug\net9.0-windows\winforms.sourcelink.json

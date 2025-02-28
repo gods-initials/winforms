@@ -10,7 +10,7 @@ class DB
         port=3306;
         username=root;
         password=root;
-        database=users"
+        database=data"
     );
 
     public void openConnection()

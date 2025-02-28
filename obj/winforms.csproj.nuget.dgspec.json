@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\galah\\Desktop\\winforms\\winforms.csproj": {}
+    "c:\\Users\\galah\\Desktop\\winforms\\winforms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\galah\\Desktop\\winforms\\winforms.csproj": {
+    "c:\\Users\\galah\\Desktop\\winforms\\winforms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\galah\\Desktop\\winforms\\winforms.csproj",
+        "projectUniqueName": "c:\\Users\\galah\\Desktop\\winforms\\winforms.csproj",
         "projectName": "winforms",
-        "projectPath": "C:\\Users\\galah\\Desktop\\winforms\\winforms.csproj",
+        "projectPath": "c:\\Users\\galah\\Desktop\\winforms\\winforms.csproj",
         "packagesPath": "C:\\Users\\galah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\galah\\Desktop\\winforms\\obj\\",
+        "outputPath": "c:\\Users\\galah\\Desktop\\winforms\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\galah\\AppData\\Roaming\\NuGet\\NuGet.Config"

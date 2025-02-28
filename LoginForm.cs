@@ -34,7 +34,7 @@ public partial class LoginForm : Form
                 MessageBox.Show("Invalid username or password");
                 break;
             case 1:
-                MessageBox.Show("You are locked in");
+                MessageBox.Show("You are logged in");
                 break;
             default:
                 MessageBox.Show("WTF?");

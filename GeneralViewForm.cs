@@ -6,11 +6,15 @@ using MySqlConnector;
 
 public partial class GeneralViewForm : Form
 {
-    public void ButtonSignup_Click(object sender, EventArgs e)
+    private int uID;
+    public GeneralViewForm(int uID)
     {
-        String username = textbox_signup_username.Text;
-        String pass = textbox_signup_password.Text;
-
+        this.uID = uID;
+        InitializeComponent();
+        FillGridView();
+    }
+    public void FillGridView()
+    {
         DB db = new();
 
         DataTable table = new();
@@ -18,21 +22,15 @@ public partial class GeneralViewForm : Form
         MySqlDataAdapter adapter = new();
 
         MySqlCommand command = new(
-            @"INSERT INTO `profiles` (`id`, `username`, `password`)
-            VALUES (null, @uN, @uP)", db.getConnection()
+            @"SELECT * FROM `game_entries`
+            WHERE `user_id` = @uID", db.getConnection()
         );
-
-        command.Parameters.Add("@uN", MySqlDbType.VarChar).Value = username;
-        command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = pass;
+        command.Parameters.Add("@uID", MySqlDbType.VarChar).Value = this.uID;
 
         adapter.SelectCommand = command;
         adapter.Fill(table);
-
-        MessageBox.Show("Sigmed up");
-        this.Close();
-    }
-    public GeneralViewForm()
-    {
-        InitializeComponent();
+        table.Columns.Remove("user_id");
+        table.Columns.Remove("id");
+        this.gamesDataGridView.DataSource = table;
     }
 }

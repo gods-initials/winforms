@@ -6,6 +6,13 @@ using MySqlConnector;
 
 public partial class LoginForm : Form
 {
+    public void OpenGeneralViewForm(int uID)
+    {
+        GeneralViewForm generalViewForm = new GeneralViewForm(uID);
+        this.Hide();
+        generalViewForm.Show();
+        generalViewForm.FormClosed += (s, args) => this.Show();
+    }
     public void ButtonLogin_Click(object sender, EventArgs e)
     {
         String username = textbox_username.Text;
@@ -34,7 +41,7 @@ public partial class LoginForm : Form
                 MessageBox.Show("Invalid username or password");
                 break;
             case 1:
-                MessageBox.Show("You are logged in");
+                OpenGeneralViewForm(Convert.ToInt16(table.Rows[0]["id"]));
                 break;
             default:
                 MessageBox.Show("WTF?");

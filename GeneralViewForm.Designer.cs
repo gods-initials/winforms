@@ -13,12 +13,6 @@ partial class GeneralViewForm
         base.Dispose(disposing);
     }
 
-    #region Windows Form Designer generated code
-
-    /// <summary>
-    ///  Required method for Designer support - do not modify
-    ///  the contents of this method with the code editor.
-    /// </summary>
     private DataGridView gamesDataGridView = new DataGridView();
     private CheckBox outcomeCheckBox = new();
     private TextBox[] textBoxes = new TextBox[2];
@@ -35,6 +29,8 @@ partial class GeneralViewForm
         this.Controls.Add(gamesDataGridView);
         this.gamesDataGridView.Location = new Point(50,50);
         this.gamesDataGridView.Size = new Size(500,400);
+        this.gamesDataGridView.ReadOnly = true;
+        this.gamesDataGridView.RowHeadersVisible = false;
 
         this.winCheckBox.Location = new Point(50,500);
         this.winCheckBox.Size = new Size(25,25);
@@ -64,5 +60,4 @@ partial class GeneralViewForm
         this.StartPosition = FormStartPosition.CenterScreen;
         this.AcceptButton = this.submitEntryButton;
     }
-    #endregion
 }

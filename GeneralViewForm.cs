@@ -39,7 +39,6 @@ public partial class GeneralViewForm : Form
     public void SubmitButtonClick(object sender, EventArgs e)
     {
         DB db = new();
-        MessageBox.Show(this.dateTextBox.Text);
         DateTime parsedDT = DateTime.ParseExact(this.dateTextBox.Text, "MM/dd/yyyy", null);
 
         MySqlCommand command = new( 
@@ -47,9 +46,9 @@ public partial class GeneralViewForm : Form
             VALUES (@win, @hero, @date, @note, @uID)", db.getConnection());
 
         command.Parameters.Add("@win", MySqlDbType.Bool).Value = this.winCheckBox.Checked;
-        command.Parameters.Add("@hero", MySqlDbType.VarChar).Value = this.Controls["heroTextBox"].Text;
+        command.Parameters.Add("@hero", MySqlDbType.VarChar).Value = this.Controls["heroTextBox"]!.Text;
         command.Parameters.Add("@date", MySqlDbType.Date).Value = parsedDT;
-        command.Parameters.Add("@note", MySqlDbType.VarChar).Value = this.Controls["noteTextBox"].Text;
+        command.Parameters.Add("@note", MySqlDbType.VarChar).Value = this.Controls["noteTextBox"]!.Text;
         command.Parameters.Add("@uID", MySqlDbType.VarChar).Value = this.uID;
         db.getConnection().Open();
         command.ExecuteNonQuery();
